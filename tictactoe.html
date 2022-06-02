@@ -6,98 +6,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        table, tr, td {
+            border: 1px solid;
+            align-items: center;
+            text-align: center;
+            font-size: 50px;
+        }
+
+        tr, td{
+            width: 70px;
+            height: 70px;
+            align-content: center;
+            align-items: center;
+            justify-content: center;
+            
+        }
+
+        div {
+            display: flex;
+            justify-content: center;
+            
+        }
+        h1{
+            text-align: center; 
+        }
 
     </style>
+
+<script src="app.js"></script>
 </head>
 <body>
-    <table>
-        <tr> <td id="row0col0" onclick ="clicked(id), check_winner()" value="0" >1</td> <td id="row0col1" onclick ="clicked(id), check_winner()" value="0" >1</td> <td id="row0col2" onclick ="clicked(id), check_winner()" value="0" >1</td> </tr>
-        <tr> <td id="row1col0" onclick ="clicked(id), check_winner()" value="0" >2</td> <td id="row1col1" onclick ="clicked(id), check_winner()" value="0" >2</td> <td id="row1col2" onclick ="clicked(id), check_winner()" value="0" >2</td> </tr>
-        <tr> <td id="row2col0" onclick ="clicked(id), check_winner()" value="0" >3</td> <td id="row2col1" onclick ="clicked(id), check_winner()" value="0" >3</td> <td id="row2col2" onclick ="clicked(id), check_winner()" value="0" >3</td> </tr>
-    </table>
+    <div>
+        <table>
+            <div>
+            <tr> <td id="row0col0" onclick ="clicked(id), check_winner()" value="0" >&nbsp; </td> <td id="row0col1" onclick ="clicked(id), check_winner()" value="0" >&nbsp; </td> <td id="row0col2" onclick ="clicked(id), check_winner()" value="0" >&nbsp; </td> </tr>
+            <tr> <td id="row1col0" onclick ="clicked(id), check_winner()" value="0" >&nbsp; </td> <td id="row1col1" onclick ="clicked(id), check_winner()" value="0" >&nbsp; </td> <td id="row1col2" onclick ="clicked(id), check_winner()" value="0" >&nbsp; </td> </tr>
+            <tr> <td id="row2col0" onclick ="clicked(id), check_winner()" value="0" >&nbsp; </td> <td id="row2col1" onclick ="clicked(id), check_winner()" value="0" >&nbsp; </td> <td id="row2col2" onclick ="clicked(id), check_winner()" value="0" >&nbsp; </td> </tr>
+            </div>
+        </table>
+    </div>
     <h1 id="winner"></h1>
-
-    <script>
-        function check_winner(){
-            let r0c0, r0c1, r0c2;
-            let r1c0, r1c1, r1c2;
-            let r2c0, r2c1, r2c2;
-
-            r0c0 = document.getElementById("row0col0").innerHTML
-            r0c1 = document.getElementById("row0col1").innerHTML
-            r0c2 = document.getElementById("row0col2").innerHTML
-            r1c0 = document.getElementById("row1col0").innerHTML
-            r1c1 = document.getElementById("row1col1").innerHTML
-            r1c2 = document.getElementById("row1col2").innerHTML
-            r2c0 = document.getElementById("row2col0").innerHTML
-            r2c1 = document.getElementById("row2col1").innerHTML
-            r2c2 = document.getElementById("row2col2").innerHTML
-
-            console.log("r0c0 : ",r0c0.toString());
-            console.log("r0c1 : ",r0c1.toString());
-            console.log("r0c2 : ",r0c2.toString());
-            console.log("r1c0 : ",r1c0.toString());
-            console.log("r1c1 : ",r1c1.toString());
-            console.log("r1c2 : ",r1c2.toString());
-            console.log("r2c0 : ",r2c0.toString());
-            console.log("r2c1 : ",r2c1.toString());
-            console.log("r2c2 : ",r2c2.toString());
-            
-            console.log(r0c0 && r0c1 && r0c2 || r0c0 && r1c0 && r2c0 || r0c0 && r1c0 && r2c0);
-            // case 1
-            if ((r0c0==="X") && (r0c1==="X") && (r0c2==="X") || (r0c0==="O") && (r0c1==="O") && (r0c2==="O")){
-                console.log("Winner is", r0c0.toString(), " !!!!");
-                document.getElementById("winner").innerHTML = "Winner is "+ r0c0 +" !!!"
-            }
-
-            // case 2
-            if ((r0c0==="X") && (r1c1==="X") && (r2c2==="X") || (r0c0==="O") && (r1c1==="O") && (r2c2==="O")){
-                console.log("Winner is", r0c0.toString(), " !!!!");
-                document.getElementById("winner").innerHTML = "Winner is "+ r0c0 +" !!!"
-            }
-
-            // case 3
-            if ((r0c0==="X") && (r1c0==="X") && (r2c0==="X") || (r0c0==="O") && (r1c0==="O") && (r2c0==="O")){
-                console.log("Winner is", r0c0.toString(), " !!!!");
-                document.getElementById("winner").innerHTML = "Winner is "+ r0c0 +" !!!"
-            }
-
-            // case 4
-            if ((r1c1==="X") && (r0c1==="X") && (r2c1==="X") || (r1c1==="O") && (r0c1==="O") && (r2c1==="O")){
-                console.log("Winner is", r1c1.toString(), " !!!!");
-                document.getElementById("winner").innerHTML = "Winner is "+ r1c1 +" !!!"
-            }
-
-            // case 5
-            if ((r1c1==="X") && (r1c0==="X") && (r1c2==="X") || (r1c1==="O") && (r1c0==="O") && (r1c2==="O")){
-                console.log("Winner is", r1c1.toString(), " !!!!");
-                document.getElementById("winner").innerHTML = "Winner is "+ r1c1 +" !!!"
-            }
-        }
-
-        let flag = 0;
-        
-        function clicked(id) {
-            
-            
-            if (flag == 0){
-                
-                document.getElementById(id).innerHTML = "X"
-                document.getElementById(id).onclick = ""
-                flag = 1
-                //console.log(document.getElementById(id).innerHTML=="X");
-                
-            }    
-               
-            else{
-                
-                document.getElementById(id).innerHTML = "O"
-                document.getElementById(id).onclick = ""
-                flag = 0
-                //console.log(document.getElementById(id).innerHTML);
-            }
-            
-        }
-    </script>
+    
 </body>
 </html>
