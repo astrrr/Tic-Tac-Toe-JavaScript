@@ -15,7 +15,7 @@
         <tr> <td id="row1col0" onclick ="clicked(id), check_winner()" value="0" >2</td> <td id="row1col1" onclick ="clicked(id), check_winner()" value="0" >2</td> <td id="row1col2" onclick ="clicked(id), check_winner()" value="0" >2</td> </tr>
         <tr> <td id="row2col0" onclick ="clicked(id), check_winner()" value="0" >3</td> <td id="row2col1" onclick ="clicked(id), check_winner()" value="0" >3</td> <td id="row2col2" onclick ="clicked(id), check_winner()" value="0" >3</td> </tr>
     </table>
-
+    <h1 id="winner"></h1>
 
     <script>
         function check_winner(){
@@ -33,7 +33,46 @@
             r2c1 = document.getElementById("row2col1").innerHTML
             r2c2 = document.getElementById("row2col2").innerHTML
 
-            console.log("check!!");
+            console.log("r0c0 : ",r0c0.toString());
+            console.log("r0c1 : ",r0c1.toString());
+            console.log("r0c2 : ",r0c2.toString());
+            console.log("r1c0 : ",r1c0.toString());
+            console.log("r1c1 : ",r1c1.toString());
+            console.log("r1c2 : ",r1c2.toString());
+            console.log("r2c0 : ",r2c0.toString());
+            console.log("r2c1 : ",r2c1.toString());
+            console.log("r2c2 : ",r2c2.toString());
+            
+            console.log(r0c0 && r0c1 && r0c2 || r0c0 && r1c0 && r2c0 || r0c0 && r1c0 && r2c0);
+            // case 1
+            if ((r0c0==="X") && (r0c1==="X") && (r0c2==="X") || (r0c0==="O") && (r0c1==="O") && (r0c2==="O")){
+                console.log("Winner is", r0c0.toString(), " !!!!");
+                document.getElementById("winner").innerHTML = "Winner is "+ r0c0 +" !!!"
+            }
+
+            // case 2
+            if ((r0c0==="X") && (r1c1==="X") && (r2c2==="X") || (r0c0==="O") && (r1c1==="O") && (r2c2==="O")){
+                console.log("Winner is", r0c0.toString(), " !!!!");
+                document.getElementById("winner").innerHTML = "Winner is "+ r0c0 +" !!!"
+            }
+
+            // case 3
+            if ((r0c0==="X") && (r1c0==="X") && (r2c0==="X") || (r0c0==="O") && (r1c0==="O") && (r2c0==="O")){
+                console.log("Winner is", r0c0.toString(), " !!!!");
+                document.getElementById("winner").innerHTML = "Winner is "+ r0c0 +" !!!"
+            }
+
+            // case 4
+            if ((r1c1==="X") && (r0c1==="X") && (r2c1==="X") || (r1c1==="O") && (r0c1==="O") && (r2c1==="O")){
+                console.log("Winner is", r1c1.toString(), " !!!!");
+                document.getElementById("winner").innerHTML = "Winner is "+ r1c1 +" !!!"
+            }
+
+            // case 5
+            if ((r1c1==="X") && (r1c0==="X") && (r1c2==="X") || (r1c1==="O") && (r1c0==="O") && (r1c2==="O")){
+                console.log("Winner is", r1c1.toString(), " !!!!");
+                document.getElementById("winner").innerHTML = "Winner is "+ r1c1 +" !!!"
+            }
         }
 
         let flag = 0;
@@ -46,7 +85,7 @@
                 document.getElementById(id).innerHTML = "X"
                 document.getElementById(id).onclick = ""
                 flag = 1
-                console.log(document.getElementById(id).innerHTML=="X");
+                //console.log(document.getElementById(id).innerHTML=="X");
                 
             }    
                
@@ -55,7 +94,7 @@
                 document.getElementById(id).innerHTML = "O"
                 document.getElementById(id).onclick = ""
                 flag = 0
-                console.log(document.getElementById(id).innerHTML);
+                //console.log(document.getElementById(id).innerHTML);
             }
             
         }
