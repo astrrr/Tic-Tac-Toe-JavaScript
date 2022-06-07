@@ -1,24 +1,32 @@
 
 let flag = 0;
 let game_over = 0;
-let round_count =0;
 
+let r0c0 = document.getElementById("row0col0")
+let r0c1 = document.getElementById("row0col1")
+let r0c2 = document.getElementById("row0col2")
+let r1c0 = document.getElementById("row1col0")
+let r1c1 = document.getElementById("row1col1")
+let r1c2 = document.getElementById("row1col2")
+let r2c0 = document.getElementById("row2col0")
+let r2c1 = document.getElementById("row2col1")
+let r2c2 = document.getElementById("row2col2")
 
-// let table = [[r0c0, r0c1, r0c2], [r1c0, r1c1, r1c2], [r2c0, r2c1, r2c2]];
-// let table2 = [[0, 1, 2], [3, 4, 5], [6, 7, 8]];
+let table = [[r0c0, r0c1, r0c2], [r1c0, r1c1, r1c2], [r2c0, r2c1, r2c2]];
+let table2 = [[0, 1, 2], [3, 4, 5], [6, 7, 8]];
 
 
 function check_winner(){
 
-    let r0c0 = document.getElementById("row0col0").innerHTML
-    let r0c1 = document.getElementById("row0col1").innerHTML
-    let r0c2 = document.getElementById("row0col2").innerHTML
-    let r1c0 = document.getElementById("row1col0").innerHTML
-    let r1c1 = document.getElementById("row1col1").innerHTML
-    let r1c2 = document.getElementById("row1col2").innerHTML
-    let r2c0 = document.getElementById("row2col0").innerHTML
-    let r2c1 = document.getElementById("row2col1").innerHTML
-    let r2c2 = document.getElementById("row2col2").innerHTML
+    // let r0c0 = document.getElementById("row0col0").innerHTML
+    // let r0c1 = document.getElementById("row0col1").innerHTML
+    // let r0c2 = document.getElementById("row0col2").innerHTML
+    // let r1c0 = document.getElementById("row1col0").innerHTML
+    // let r1c1 = document.getElementById("row1col1").innerHTML
+    // let r1c2 = document.getElementById("row1col2").innerHTML
+    // let r2c0 = document.getElementById("row2col0").innerHTML
+    // let r2c1 = document.getElementById("row2col1").innerHTML
+    // let r2c2 = document.getElementById("row2col2").innerHTML
     
 
     // case 1
@@ -76,13 +84,6 @@ function check_winner(){
         document.getElementById("winner").innerHTML = "Winner is "+ r2c2 +" !!!"
         game_over = 1
     }
-
-    //case 9 draw
-    if(round_count == 9 && game_over==0){
-        console.log("Draw !!!");
-        document.getElementById("winner").innerHTML = "Draw !!!"
-        game_over = 1
-    }
 }
 
 
@@ -90,8 +91,6 @@ function check_winner(){
 
 
 function clicked(id) {
-
-    round_count++
     
     if (game_over ==0){
 
@@ -100,7 +99,7 @@ function clicked(id) {
             document.getElementById(id).innerHTML = "X"
             document.getElementById(id).onclick = ""
             flag = 1
-            
+            console.log(document.getElementById(id));
             
         }    
             
@@ -115,8 +114,7 @@ function clicked(id) {
     else{
         document.getElementById(id).onclick = ""
     }
-    console.log("id : ", id);
-    console.log(document.getElementById(id).innerHTML);
+    
     check_winner();
 }
 
