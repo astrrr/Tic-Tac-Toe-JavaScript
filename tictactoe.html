@@ -32,9 +32,9 @@
             border-bottom: 3px solid;
         }
 
-        .mid {
+        /* .mid {
             border: 3px solid;
-        }
+        } */
 
         .midcol {
             border-left: 3px solid;
@@ -58,9 +58,21 @@
     <div>
         <table id="table1">
             <div>
-                <tr> <td id="row0col0" onclick ="clicked(id)" value="0" >&nbsp; </td> <td id="row0col1" onclick ="clicked(id)" value="0" class="midcol">&nbsp; </td> <td id="row0col2" onclick ="clicked(id)" value="0" >&nbsp; </td> </tr>
-                <tr> <td id="row1col0" onclick ="clicked(id)" value="0" class="midrow">&nbsp; </td> <td id="row1col1" onclick ="clicked(id)" value="0" class="mid">&nbsp; </td> <td id="row1col2" onclick ="clicked(id)" value="0" class="midrow">&nbsp; </td> </tr>
-                <tr> <td id="row2col0" onclick ="clicked(id)" value="0" >&nbsp; </td> <td id="row2col1" onclick ="clicked(id)" value="0" class="midcol">&nbsp; </td> <td id="row2col2" onclick ="clicked(id)" value="0" >&nbsp; </td> </tr>
+                <tr> 
+                    <td id="0" onclick ="clicked( this)"  ></td> 
+                    <td id="1" onclick ="clicked( this)"  class="midcol"></td>
+                     <td id="2" onclick ="clicked( this)"  ></td> 
+                </tr>
+                <tr> 
+                    <td id="3" onclick ="clicked( this)"  class="midrow"></td> 
+                    <td id="4" onclick ="clicked( this)"  class="midrow midcol"></td> 
+                    <td id="5" onclick ="clicked( this)"  class="midrow"></td> 
+                </tr>
+                <tr> 
+                    <td id="6" onclick ="clicked( this)"  ></td> 
+                    <td id="7" onclick ="clicked( this)"  class="midcol"></td> 
+                    <td id="8" onclick ="clicked( this)"  ></td> 
+                </tr>
             </div>
         </table>
     </div>
