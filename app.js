@@ -4,7 +4,7 @@ let turn = 1; // 1 = x , -1 = o
 
 
 function clicked(cell) {
-    if(cell.innerHTML == ""){
+    if(cell.innerHTML == "" && winning==0){
         cell.innerHTML = turn == 1? "X" : "O" 
         tictactoe(cell.id, turn)
         if (winning != 0) {
